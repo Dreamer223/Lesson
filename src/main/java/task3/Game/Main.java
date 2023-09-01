@@ -19,7 +19,7 @@ public class Main {
             System.out.println(game.getGameStatus());
             String restart = scanner.nextLine();
             System.out.println("Вы хотите начать игру занова\n" +
-                    "Да - 1\t" + "Нет - 0");
+                    "Да - 1\t" + "Нет - 0\n");
             if (restart == "0"){
                 break;
             }
