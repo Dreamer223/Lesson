@@ -53,7 +53,7 @@ public abstract class AbstractGame implements Game {
             }
             else {
                 for (int j = 0; j < word.length(); j++) {
-                    if (word.charAt(i) == value.charAt(j)){
+                    if (word.charAt(j) == value.charAt(i)){
                         cows++;
                     }
                 }
