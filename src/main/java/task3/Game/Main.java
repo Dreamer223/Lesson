@@ -13,20 +13,12 @@ public class Main {
                     "\n Числа - 3");
             int gameMode = Integer.parseInt(scanner.nextLine());
             Game game = null;
-            switch (gameMode)
-            {
-                case 1:
-                    game = new RUGame();
-                    break;
-                case 2:
-                    game = new ENGame();
-                    break;
-                case 3:
-                    game = new GameNumbers();
-                    break;
-                default:
-                    System.out.println("Ошибка!!!\n"+
-                            "Вы не выбрали режим игры");
+            switch (gameMode) {
+                case 1 -> game = new RUGame();
+                case 2 -> game = new ENGame();
+                case 3 -> game = new GameNumbers();
+                default -> System.out.println("Ошибка!!!\n" +
+                        "Вы не выбрали режим игры");
             }
             game.start(4,5);
 
