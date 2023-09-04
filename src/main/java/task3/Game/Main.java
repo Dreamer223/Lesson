@@ -1,10 +1,15 @@
 package task3.Game;
-
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
+import java.util.concurrent.TimeUnit;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         String restart = "1";
+        String answer2 = null;
+        int otv;
+        List<String> statistic = new ArrayList<>();
         while (restart.equals("1")){
             Scanner scanner = new Scanner(System.in);
             System.out.println("Выберите режим игры:" +
@@ -26,16 +31,23 @@ public class Main {
                     && !game.getGameStatus().equals(GameStatus.GAME_OVER)){
                 String scanWord = scanner.nextLine();
                 Answer answer = game.inputValue(scanWord);
-                System.out.println("answer = " + answer);
+                statistic.add(String.valueOf(answer));
             }
             System.out.println(game.getGameStatus());
+            System.out.println("Хотите посмотреть свою статистику за эту игру?" +
+                    "Да - 1\t" + "Нет - 0\n");
+            otv = scanner.nextInt();
+            if (otv == 1){
+                System.out.println(statistic);
+//                    TimeUnit.SECONDS.sleep(5);
+            }
             System.out.println("Вы хотите начать игру занова\n" +
                     "Да - 1\t" + "Нет - 0\n");
             restart = scanner.nextLine();
-
             if (restart == "0"){
-                break;
+                System.exit(0);
             }
         }
+
     }
 }
